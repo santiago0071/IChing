@@ -1,3 +1,12 @@
+// 禁用右键菜单
+document.oncontextmenu = function() { return false; };
+
+// 禁用 F12 和常用开发者快捷键
+document.onkeydown = function(e) {
+    if (e.keyCode == 123 || (e.ctrlKey && e.shiftKey && (e.keyCode == 73 || e.keyCode == 74)) || (e.ctrlKey && e.keyCode == 85)) {
+        return false;
+    }
+};
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
@@ -237,3 +246,4 @@ function renderFinalResult(data, idx) {
 </body>
 
 </html>
+
